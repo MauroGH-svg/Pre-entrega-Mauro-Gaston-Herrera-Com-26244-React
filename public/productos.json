@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Decoración temática",
+    "precio": 25000,
+    "descripcion": "Decoración personalizada para ambientar tu evento.",
+    "imagen": "https://i.ibb.co/bMxvfmj5/decoracion-tematica.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Animación infantil",
+    "precio": 30000,
+    "descripcion": "Servicio de animación para entretener a los más chicos durante la celebración.",
+    "imagen": "https://i.ibb.co/Q3RdFXPy/animacion-infantil.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Juegos infantiles",
+    "precio": 22000,
+    "descripcion": "Juegos y actividades recreativas para que los niños disfruten del evento.",
+    "imagen": "https://i.ibb.co/cKpxd50r/Juegos-infantiles.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Servicio de DJ",
+    "precio": 40000,
+    "descripcion": "Música y entretenimiento con DJ para acompañar todos los momentos de tu evento.",
+    "imagen": "https://i.ibb.co/hJ2QP9Wv/servicio-de-dj.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Catering para eventos",
+    "precio": 50000,
+    "descripcion": "Servicio gastronómico para ofrecer diferentes opciones de comida a tus invitados.",
+    "imagen": "https://i.ibb.co/KpkQ272z/catering-para-eventos.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Fotografía para eventos",
+    "precio": 35000,
+    "descripcion": "Cobertura fotográfica para conservar los mejores recuerdos de tu celebración.",
+    "imagen": "https://i.ibb.co/cXcp1dV5/Fotograf-a-para-eventos.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Transporte para invitados",
+    "precio": 28000,
+    "descripcion": "Servicio de transporte para facilitar el traslado de tus invitados.",
+    "imagen": "https://i.ibb.co/6KxJdzg/Transporte-para-invitados.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Organización integral del evento",
+    "precio": 60000,
+    "descripcion": "Organización completa del evento para que puedas disfrutar de la celebración sin preocupaciones.",
+    "imagen": "https://i.ibb.co/F4nnsdm6/Organizaci-n-integral-del-evento.jpg"
+  }
+]
