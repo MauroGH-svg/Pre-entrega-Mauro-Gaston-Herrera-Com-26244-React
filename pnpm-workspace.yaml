@@ -1,0 +1,7 @@
+allowBuilds:
+  '@firebase/util': false
+  protobufjs: false
+
+overrides:
+  source-map-js: 1.2.4
+  zod: 4.6.6

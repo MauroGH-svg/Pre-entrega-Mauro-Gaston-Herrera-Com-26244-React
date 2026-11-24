@@ -1,10 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 
-createRoot(document.getElementById('root')).render(
+import App from "./App.jsx";
+
+// Importamos los proveedores de nuestros contextos.
+import { CarritoProvider } from "./context/CarritoContext";
+import { AuthProvider } from "./context/AuthContext";
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <AuthProvider>
+      <CarritoProvider>
+        <App />
+      </CarritoProvider>
+    </AuthProvider>
+  </StrictMode>
+);

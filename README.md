@@ -1,128 +1,181 @@
-# 🎉 FiestaBox
+# FiestaBox
 
-## 📌 Descripción
+## Descripción
 
-**FiestaBox** es una aplicación web desarrollada con React para una empresa ficticia de organización y servicios para eventos.
+FiestaBox es una aplicación web desarrollada con React que simula una tienda online de productos para fiestas y eventos.
 
-El proyecto permite visualizar un catálogo de servicios, consultar el detalle de cada producto y navegar por las diferentes secciones de la aplicación mediante React Router.
+El proyecto permite explorar un catálogo de productos, consultar sus detalles, gestionar un carrito de compras, registrar pedidos y acceder a diferentes funcionalidades según el rol del usuario.
 
-Este proyecto forma parte del proceso de aprendizaje y práctica de **React JS**. como pre - entrega
-del proyecto final del curso de Reacto del programa Talento-Tech 2026
+La aplicación utiliza Firebase para la autenticación de usuarios y el almacenamiento de información mediante Cloud Firestore.
 
----
+Este proyecto forma parte del trabajo final del curso de React JS del programa Talento Tech 2026.
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 
-* ⚛️ React
-* ⚡ Vite
-* 🧭 React Router DOM
-* 🟨 JavaScript
-* 🎨 HTML y CSS
-* 📄 JSON
-* 📦 pnpm
-* 🖼️ ImgBB para las imágenes de los productos
+- React
+- JavaScript
+- Vite
+- React Router DOM
+- Context API
+- Firebase Authentication
+- Cloud Firestore
+- Tailwind CSS
+- CSS
+- HTML
+- pnpm
+- ImgBB para el alojamiento de imágenes de productos
 
----
+## Estructura del proyecto
 
-## 🛍️ Funcionalidades
-
-Actualmente, FiestaBox cuenta con:
-
-* 🏠 Página de inicio.
-* 🛍️ Catálogo de 8 servicios.
-* 🖼️ Imagen para cada producto.
-* 💰 Precio y descripción de cada servicio.
-* 🔎 Página de detalle individual para cada producto.
-* 🧭 Navegación mediante React Router.
-* 🛒 Botón "Agregar al carrito" preparado para la futura implementación.
-* 📱 Diseño responsive para diferentes tamaños de pantalla.
-* 🦶 Footer con información de la empresa y equipo de trabajo.
-
-> La funcionalidad completa del carrito será incorporada en la etapa final del proyecto.
-
----
-
-## 📂 Estructura del proyecto
-
-```text
 fiestabox/
 │
 ├── public/
-│   └── productos.json
 │
 ├── src/
+│   ├── assets/
+│   │
 │   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── NavBar.jsx
 │   │   ├── Footer.jsx
-│   │   ├── Layout.jsx
+│   │   ├── Header.jsx
+│   │   ├── Item.jsx
 │   │   ├── ItemListContainer.jsx
-│   │   └── Item.jsx
+│   │   ├── Layout.jsx
+│   │   ├── NavBar.jsx
+│   │   └── ProtectedRoute.jsx
+│   │
+│   ├── context/
+│   │   ├── AuthContext.jsx
+│   │   └── CarritoContext.jsx
+│   │
+│   ├── data/
+│   │
+│   ├── firebase/
+│   │   └── config.js
 │   │
 │   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── Productos.jsx
+│   │   ├── AdminPedidos.jsx
+│   │   ├── AdminProductos.jsx
+│   │   ├── CargarProductos.jsx
+│   │   ├── Carrito.jsx
 │   │   ├── DetalleProducto.jsx
-│   │   └── Carrito.jsx
+│   │   ├── Home.jsx
+│   │   ├── InicioSesion.jsx
+│   │   ├── MisPedidos.jsx
+│   │   ├── Productos.jsx
+│   │   └── Registro.jsx
 │   │
+│   ├── App.css
 │   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
+│   ├── index.css
+│   └── main.jsx
 │
+├── .gitignore
+├── index.html
 ├── package.json
-├── vite.config.js
-└── README.md
-```
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── README.md
+└── vite.config.js
 
----
+## Funcionalidades
 
-## 🧭 Rutas disponibles
+### Catálogo de productos
 
-| Ruta            | Descripción                  |
-| --------------- | ---------------------------- |
-| `/`             | Página de inicio             |
-| `/productos`    | Catálogo de servicios        |
-| `/producto/:id` | Detalle de un producto       |
-| `/carrito`      | Sección destinada al carrito |
+- Visualización de productos para fiestas y eventos.
+- Imágenes, nombres, descripciones y precios.
+- Consulta del detalle individual de cada producto.
+- Búsqueda de productos por nombre.
+- Obtención de información desde Cloud Firestore.
 
----
+### Carrito de compras
 
-## 📦 Productos
+- Agregar productos al carrito.
+- Eliminar productos.
+- Modificar cantidades.
+- Calcular subtotales y total de compra.
+- Vaciar el carrito.
+- Persistencia del carrito mediante localStorage.
 
-El catálogo actualmente cuenta con 8 servicios:
+### Autenticación de usuarios
 
-1. Decoración temática
-2. Animación infantil
-3. Juegos infantiles
-4. Servicio de DJ
-5. Catering para eventos
-6. Fotografía para eventos
-7. Transporte para invitados
-8. Organización integral del evento
+- Registro de nuevos usuarios.
+- Inicio y cierre de sesión.
+- Autenticación mediante Firebase Authentication.
+- Diferenciación de permisos según el rol del usuario.
+- Protección de rutas privadas.
 
-Los productos se encuentran almacenados en un archivo `productos.json` y son cargados mediante `fetch()`.
+### Panel de administración
 
----
+- Acceso exclusivo para usuarios con rol administrador.
+- Visualización de productos registrados.
+- Creación de nuevos productos.
+- Edición de productos existentes.
+- Eliminación de productos.
+- Validación de los datos ingresados en los formularios.
 
-## ⚛️ Conceptos de React utilizados
+### Gestión de pedidos
 
-Durante el desarrollo del proyecto se aplicaron diferentes conceptos fundamentales de React:
+- Registro de compras en Cloud Firestore.
+- Consulta del historial de pedidos por parte del cliente.
+- Visualización y administración de pedidos desde el panel administrativo.
+- Actualización del estado de los pedidos.
+- Seguimiento de los estados de cada compra.
 
-* Componentes reutilizables.
-* Props.
-* `useState`.
-* `useEffect`.
-* Renderizado dinámico con `map()`.
-* Navegación con React Router.
-* Parámetros dinámicos mediante `useParams()`.
-* Consumo de datos desde un archivo JSON.
-* Organización del proyecto mediante componentes y páginas.
+### Diseño y navegación
 
----
+- Página de inicio.
+- Diseño responsive.
+- Navegación mediante React Router DOM.
+- Componentes reutilizables.
+- Interfaz adaptada a las funcionalidades de la tienda.
 
-## 💻 Instalación y ejecución
+## Cuentas de demostración
 
-Para ejecutar el proyecto de manera local:
+La aplicación dispone de dos perfiles de usuario para probar las diferentes funcionalidades:
+
+**Administrador**
+- Rol: `admin`
+- Permisos: gestión de productos y administración de pedidos.
+
+**Cliente**
+- Rol: `cliente`
+- Permisos: navegación por el catálogo, utilización del carrito, realización de compras y consulta del historial de pedidos.
+
+Las credenciales de acceso corresponden a usuarios ficticios creados exclusivamente para la evaluación y se proporcionan por separado, sin publicarse en este repositorio por razones de seguridad.
+
+## Rutas disponibles
+
+| Ruta | Descripción |
+|---|---|
+| `/` | Página de inicio |
+| `/productos` | Catálogo de productos |
+| `/producto/:id` | Detalle individual del producto |
+| `/carrito` | Carrito de compras |
+| `/login` | Inicio de sesión |
+| `/registro` | Registro de usuarios |
+| `/mis-pedidos` | Historial de pedidos del cliente |
+| `/admin` | Panel de administración de productos |
+| `/admin/pedidos` | Administración de pedidos |
+
+Las rutas administrativas están protegidas y requieren un usuario autenticado con rol de administrador.
+
+## Base de datos y servicios de Firebase
+
+El proyecto utiliza Firebase para gestionar la autenticación y almacenar la información de la aplicación.
+
+**Firebase Authentication**
+- Registro e inicio de sesión mediante correo electrónico y contraseña.
+
+**Cloud Firestore**
+- Colección `usuarios`: información de los usuarios y sus roles.
+- Colección `productos`: catálogo de productos de la tienda.
+- Colección `pedidos`: compras registradas por los clientes.
+
+Las reglas de seguridad de Firestore establecen permisos de lectura y escritura según la autenticación y el rol del usuario.
+
+## Instalación y ejecución
+
+Para ejecutar el proyecto localmente:
 
 ### 1. Clonar el repositorio
 
@@ -130,7 +183,7 @@ Para ejecutar el proyecto de manera local:
 git clone URL_DEL_REPOSITORIO
 ```
 
-### 2. Ingresar al proyecto
+### 2. Ingresar a la carpeta del proyecto
 
 ```bash
 cd fiestabox
@@ -142,45 +195,53 @@ cd fiestabox
 pnpm install
 ```
 
-### 4. Iniciar el servidor de desarrollo
+### 4. Configurar Firebase
+
+Crear o utilizar un proyecto de Firebase, habilitar Authentication con correo electrónico y contraseña, configurar Cloud Firestore y completar la configuración de conexión en:
+
+`src/firebase/config.js`
+
+### 5. Iniciar el servidor de desarrollo
 
 ```bash
 pnpm dev
 ```
 
-Luego abrir en el navegador la dirección indicada por Vite.
+Luego abrir en el navegador la dirección local indicada por Vite.
 
----
+### 6. Generar la versión de producción
 
-## 👥 Equipo
+```bash
+pnpm build
+```
 
-### Mauro Herrera
+### 7. Visualizar la versión de producción localmente
 
-Desarrollador
+```bash
+pnpm preview
+```
 
-### Integrante 2
+## Conceptos de React aplicados
 
-Desarrollador
+Durante el desarrollo se utilizaron diferentes conceptos y herramientas:
 
-### Integrante 3
+- Componentes reutilizables.
+- Props.
+- Hooks `useState`, `useEffect` y `useContext`.
+- Context API para el manejo del estado global.
+- Renderizado dinámico de listas.
+- Manejo de eventos.
+- Formularios controlados y validaciones.
+- React Router DOM.
+- Parámetros dinámicos mediante `useParams`.
+- Rutas protegidas.
+- Consumo de datos desde Firestore.
+- Operaciones CRUD.
+- Manejo de estados de carga y errores.
+- Persistencia de información mediante localStorage.
 
-Desarrollador
+## Proyecto académico
 
----
+FiestaBox fue desarrollado como proyecto final del curso de React JS del programa Talento Tech 2026.
 
-## 🔮 Próximas mejoras
-
-Para la etapa final del proyecto se prevé incorporar:
-
-* 🛒 Funcionalidad completa del carrito.
-* 🧠 Context API para manejar el estado global del carrito.
-* ➕ Agregar y eliminar productos.
-* 💰 Cálculo del total de la compra.
-* 🔢 Control de cantidades.
-* 💾 Persistencia de datos cuando corresponda.
-
----
-
-## 📚 Proyecto académico
-
-Proyecto desarrollado como parte del curso de **React JS**, con el objetivo de aplicar los conceptos aprendidos durante la cursada mediante el desarrollo de una aplicación web funcional y componentizada.
+El objetivo es aplicar los conocimientos adquiridos durante la cursada mediante la construcción de una aplicación web funcional, organizada y conectada a servicios de Firebase.
