@@ -7,17 +7,17 @@ const eventos = [
   {
     titulo: "Celebraciones inolvidables",
     descripcion: "Cada cumpleaños merece un momento especial.",
-    imagen: "/eventos/evento-1.jpg"
+    imagen: `${import.meta.env.BASE_URL}eventos/evento-1.jpg`
   },
   {
     titulo: "Decoraciones que sorprenden",
     descripcion: "Dale color y alegría a cada celebración.",
-    imagen: "/eventos/evento-2.jpg"
+    imagen: `${import.meta.env.BASE_URL}eventos/evento-2.jpg`
   },
   {
     titulo: "Momentos para compartir",
     descripcion: "Prepará una fiesta llena de recuerdos.",
-    imagen: "/eventos/evento-3.jpg"
+    imagen: `${import.meta.env.BASE_URL}eventos/evento-3.jpg`
   }
 ];
 
@@ -78,7 +78,7 @@ function Home() {
     sm:min-h-[520px] sm:py-24 lg:min-h-[580px]"
   style={{
     backgroundImage:
-      "linear-gradient(115deg, rgba(33, 27, 80, 0.88), rgba(55, 48, 111, 0.75), rgba(41, 35, 92, 0.68)), url('/eventos/fondo-inicio.jpg')"
+      `linear-gradient(115deg, rgba(33, 27, 80, 0.88), rgba(55, 48, 111, 0.75), rgba(41, 35, 92, 0.68)), url('${import.meta.env.BASE_URL}eventos/fondo-inicio.jpg')`
   }}
 >
 
