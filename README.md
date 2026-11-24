@@ -27,9 +27,12 @@ Este proyecto forma parte del trabajo final del curso de React JS del programa T
 
 ## Estructura del proyecto
 
+```text
 fiestabox/
 │
 ├── public/
+│   ├── eventos/
+│   └── productos.json
 │
 ├── src/
 │   ├── assets/
@@ -76,6 +79,7 @@ fiestabox/
 ├── pnpm-workspace.yaml
 ├── README.md
 └── vite.config.js
+```
 
 ## Funcionalidades
 
@@ -134,10 +138,12 @@ fiestabox/
 La aplicación dispone de dos perfiles de usuario para probar las diferentes funcionalidades:
 
 **Administrador**
+
 - Rol: `admin`
 - Permisos: gestión de productos y administración de pedidos.
 
 **Cliente**
+
 - Rol: `cliente`
 - Permisos: navegación por el catálogo, utilización del carrito, realización de compras y consulta del historial de pedidos.
 
@@ -164,9 +170,11 @@ Las rutas administrativas están protegidas y requieren un usuario autenticado c
 El proyecto utiliza Firebase para gestionar la autenticación y almacenar la información de la aplicación.
 
 **Firebase Authentication**
+
 - Registro e inicio de sesión mediante correo electrónico y contraseña.
 
 **Cloud Firestore**
+
 - Colección `usuarios`: información de los usuarios y sus roles.
 - Colección `productos`: catálogo de productos de la tienda.
 - Colección `pedidos`: compras registradas por los clientes.
@@ -180,13 +188,13 @@ Para ejecutar el proyecto localmente:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/MauroGH-svg/Pre-entrega-Mauro-Gaston-Herrera-Com-26244-React.git
 ```
 
 ### 2. Ingresar a la carpeta del proyecto
 
 ```bash
-cd fiestabox
+cd Pre-entrega-Mauro-Gaston-Herrera-Com-26244-React
 ```
 
 ### 3. Instalar las dependencias
